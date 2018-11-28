@@ -15,6 +15,12 @@ if (!$result) {
   <p>Please add a account <a href="add_account.php">Here..</a></p>';
 }
 
+else {
+
+  $user_data = db_query('SELECT * FROM users WHERE')
+
+}
+
 
 
 
