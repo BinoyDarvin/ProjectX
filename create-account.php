@@ -24,6 +24,7 @@ if (count(db_query('SELECT *FROM users WHERE email = :email', array(':email' => 
           //now we can insert values into database
           db_query('INSERT INTO users VALUES("", :username, :password, :email)', array(':username' => $username, ':password' => password_hash($password, PASSWORD_DEFAULT), ':email' => $email));
 
+          redirect('success_create.php');
         }//end of if 3
         else {
           echo "Invalid email";
@@ -51,7 +52,40 @@ else {
 
 }
 
+$output = <<<HEREDOC
+<div class="container">
+<h1 class="form-head">Create Account</h1>
+ <form class="" action="" method="post">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" id="sample3" name="username">
+    <label class="mdl-textfield__label" for="sample3">Username</label>
+  </div>
+  <br>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" id="sample3" name="password">
+    <label class="mdl-textfield__label" for="sample3">Password</label>
+  </div>
 
+  <br>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" id="sample3" name="email">
+    <label class="mdl-textfield__label" for="sample3">Email</label>
+  </div>
+
+  <br>
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" name="submit">
+  Create account
+  </button>
+</form>
+
+</div>
+
+
+HEREDOC;
+
+
+
+html_generate('styles/login.css', $output);
 
 
 
@@ -59,26 +93,3 @@ else {
 
 
 ?>
-
-
-
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Create Account</title>
-</head>
-<body>
-
-
-<form action="" method="POST">
-<h1>Create an Account</h1>
-<p><input type="text" name="username" placeholder="Enter your username"></p>
-<p><input type="password" name="password" placeholder="Enter your password"></p>
-<p><input type="email" name="email" placeholder="Enter your email"></p>
-<p><button type="submit" name="submit">Create Account</button></p>
-</form>
-
-</body>
-</html>

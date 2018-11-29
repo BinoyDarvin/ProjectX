@@ -1,0 +1,35 @@
+body,html{
+    
+    height: auto;
+    width: 100%;
+   background: #FF5F6D;  /* fallback for old browsers */
+background: #EECDA3;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #EF629F, #EECDA3);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #EF629F, #EECDA3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+
+.container{
+    
+    width: 520px;
+    height: 400px;
+    margin: 0 auto;
+    border-radius: 2px;
+    text-align: center;
+    margin-top: 200px;
+    
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+background: #eee;
+    
+}
+
+.mdl-button{
+    width: 305px;
+    height: 40px;
+}
+
+.form-head{
+    padding: 1px 0;
+    
+}

@@ -65,22 +65,40 @@ redirect('main.php');
 $output ='
 <form action="" method="post">
 
+<h1>Fill in the details</h1>
 
-<p>Bank name
-<input type="text" name="bank_name">
-</p>
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" id="sample3" name="bank_name">
+    <label class="mdl-textfield__label" for="sample3">Bank Name</label>
+</div>
 
-<p>Account Number
-<input type="number" name="act_no">
-</p>
-<p>IFSC Code
-<input type="text" name="ifsc">
-</p>
-<p>Mobile Number
-<input type="number" name="mobile_number" value="">
-</p>
 
-<button type="submit" name="add_account">
+
+<br>
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" id="sample3" name="act_no">
+    <label class="mdl-textfield__label" for="sample3">Account Number</label>
+  </div>
+
+
+<br>
+
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" id="sample3" name="ifsc">
+    <label class="mdl-textfield__label" for="sample3">IFSC Code</label>
+  </div>
+
+
+
+<br>
+
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" id="sample3" name="mobile_number">
+    <label class="mdl-textfield__label" for="sample3">Mobile Number</label>
+  </div>
+
+<br>
+<button type="submit" name="add_account" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
 Submit
 </button>
 

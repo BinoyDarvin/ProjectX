@@ -42,9 +42,41 @@ if (isset($_POST['submit'])) {
 }
 
 
+$output = <<<HEREDOC
+<div class="container">
+<h1 class="form-head">Login to continue</h1>
+ <form class="" action="" method="post">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" id="sample3" name="username">
+    <label class="mdl-textfield__label" for="sample3">Username</label>
+  </div>
+  <br>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="password" id="sample3" name="password">
+    <label class="mdl-textfield__label" for="sample3">Password</label>
+  </div>
+  
+  <br>
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" name="submit">
+  Login
+  </button>
+</form>
+
+</div>
+
+
+HEREDOC;
+
+
+
+html_generate('styles/login.css', $output);
 
  ?>
 
+
+
+
+<!--
 
  <form class="" action="" method="post">
   <h1>Login</h1>
@@ -54,3 +86,4 @@ if (isset($_POST['submit'])) {
 
 
  </form>
+-->

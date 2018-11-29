@@ -26,6 +26,20 @@ if (!login_check()) {
 }
 
 
+$output = <<<HEREDOC
+
+
+<form class="" action="" method="post">
+  <h1>Logout</h1>
+  <input type="checkbox" name="alldevices"><span>Logout of all devices</span>
+  <button type="submit" name="logout"  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Logout</button>
+</form>
+
+HEREDOC;
+
+
+
+html_generate('styles/logout.css', $output)
 
 
  ?>
@@ -34,9 +48,3 @@ if (!login_check()) {
 
 
 
-
-<form class="" action="" method="post">
-  <h1>Logout</h1>
-  <input type="checkbox" name="alldevices"><span>Logout of all devices</span>
-  <button type="submit" name="logout">Logout</button>
-</form>
