@@ -29,12 +29,28 @@ $universal_bank_user_id = $result[0]['id'];
 $trans = db_custom_query('universal_open_bank', 'SELECT * FROM transactions WHERE user_id = :user_id',array(':user_id' =>$universal_bank_user_id ), true);
 
 
+
+$loans = db_custom_query('universal_open_bank', 'SELECT * FROM loan WHERE act_no = :act_no', array(':act_no' => $act_no), true);
+
+
+
   $i = 0;
   while($i < sizeof($trans)){
 
   db_query("INSERT INTO transactions VALUES('', :user_id,:act_no, :amt, :type, :date)", array(':user_id' => $user_id, ':amt' => $trans[$i]['transaction'],':act_no' => $trans[$i]['act_no'] , ':type' => $trans[$i]['type'], ':date' => $trans[$i]['date']));
   $i++;
 }//end of loop
+
+
+$i = 0;
+while($i < sizeof($loans)){
+
+db_query("INSERT INTO loan_details VALUES('', :bank_name,:user_id, :loan_amount, :type, :paid_amount, :due_amount, :interest, :duration)", array(':bank_name' => $loans[$i]['bank_name'], ':user_id' => login_check(),':loan_amount' => $loans[$i]['loan_amount'] , ':type' => $loans[$i]['type'], ':paid_amount' => $loans[$i]['paid_amount'], ':due_amount' => $loans[$i]['due_amount'], ':interest' => $loans[$i]['interest'], ':duration' => $loans[$i]['duration']));
+$i++;
+}//end of loop
+
+
+
 }//end of else
 
 

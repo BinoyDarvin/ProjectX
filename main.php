@@ -12,7 +12,7 @@ if (login_check()) {
 $result  = db_query('SELECT *FROM main WHERE user_id  = :user_id', array(':user_id' => $user_id), true);
 
 if (!$result) {
-  $output = '<h1>No Accounts found..!</h1><br>
+  $output = '<h1>No Bank Accounts Found..!</h1><br>
   <p>Please add a account <a href="add_account.php">Here..</a></p>';
   html_generate('styles/main.css', $output, $user_name);
 }

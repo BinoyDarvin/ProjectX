@@ -10,22 +10,59 @@ if($result == null)
     echo "<h1>You have no current loans</h1>";
     exit();
     }
+
+html_generate('styles/loan_details.css', '');
 ?>
 
-s
 
-<html>
 
+<style>
+    table{
+        text-align: center;
+        margin: 0 auto;
+    }
+
+
+</style>
 <h1>Loan details </h1>
 
+<table class="mdl-data-table mdl-js-data-table">
+  <thead>
+    <tr>
+      <th class="mdl-data-table__cell--non-numeric">Bank Name</th>
+      <th>Amount Paid</th>
+        <th>Due Amount</th>
+        <th>Duration</th>
+    </tr>
+  </thead>
+  <tbody>    
+    
+    
+    
+    
 <?php
 
-    $runner = 0;
-
-    echo "Bank name  :".$result[$runner]['bank_name']."<br>";
-    echo "loan_amount  :".$result[$runner]['loan_amount']."<br>";
-    echo "amount_paid  :".$result[$runner]['paid_amount']."<br>";
-    echo "due amount  :".$result[$runner]['due_amount']."<br>";
-    echo "duration  :".$result[$runner]['duration']."<br>";
+    $i = 0;
+while($i < sizeof($result)){
+  
+echo "   
+    <tr>
+      <td class='mdl-data-table__cell--non-numeric'>
+        {$result[$i]['bank_name']}
+    </td>
+      <td>{$result[$i]['paid_amount']}</td>
+      <td>{$result[$i]['due_amount']}</td>
+        <td>{$result[$i]['duration']}</td>
+    </tr>";   
+    
+  $i++;  
+}//end of while
 ?>
+    
+    
+
+    
+   
+  </tbody>
+</table>    
 </html>
