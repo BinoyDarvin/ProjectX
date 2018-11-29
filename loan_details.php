@@ -7,7 +7,7 @@ $user_id = login_check(); //to be given by binoy c darvin
 $result = db_query("SELECT * FROM loan_details WHERE user_id = :user_id", array(":user_id"=>$user_id), $return = true);
 if($result == null)
     {
-    echo "<h1>you have no current loans</h1>";
+    echo "<h1>You have no current loans</h1>";
     exit();
     }
 ?>
@@ -19,7 +19,7 @@ s
 <h1>Loan details </h1>
 
 <?php
-    
+
     $runner = 0;
 
     echo "Bank name  :".$result[$runner]['bank_name']."<br>";

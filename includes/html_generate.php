@@ -39,9 +39,16 @@ $menuout = <<<HEREDOC
 </div>
 <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
     for="demo-menu-lower-left">
+
+    <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">
+    <a href='all_mini.php'>Account Statement</a>
+    </li>
+
   <li class="mdl-menu__item">
   <a href='loan_details.php'>Loans</a>
   </li>
+
+
   <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">
   <a href='transactions.php'>Send Money</a>
   </li>
