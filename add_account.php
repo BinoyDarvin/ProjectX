@@ -32,7 +32,7 @@ $trans = db_custom_query('universal_open_bank', 'SELECT * FROM transactions WHER
   $i = 0;
   while($i < sizeof($trans)){
 
-  db_query("INSERT INTO transactions VALUES('', :user_id, :amt, :type, :date)", array(':user_id' => $user_id, ':amt' => $trans[$i]['transaction'], ':type' => $trans[$i]['type'], ':date' => $trans[$i]['date']));
+  db_query("INSERT INTO transactions VALUES('', :user_id,:act_no, :amt, :type, :date)", array(':user_id' => $user_id, ':amt' => $trans[$i]['transaction'],':act_no' => $trans[$i]['act_no'] , ':type' => $trans[$i]['type'], ':date' => $trans[$i]['date']));
   $i++;
 }//end of loop
 }//end of else
