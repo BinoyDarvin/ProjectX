@@ -62,7 +62,7 @@ $output = <<<HEREDOC
   </div>
   <br>
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <input class="mdl-textfield__input" type="text" id="sample3" name="password">
+    <input class="mdl-textfield__input" type="password" id="sample3" name="password">
     <label class="mdl-textfield__label" for="sample3">Password</label>
   </div>
 
